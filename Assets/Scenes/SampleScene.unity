@@ -309,7 +309,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 705972566}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnMouseClick
+        m_MethodName: OnSelect
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
