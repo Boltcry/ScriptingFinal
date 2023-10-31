@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
 
 
+    public Camera mainCamera;
     private PlayerInput playerInput;
     private InputAction selectAction;
 
@@ -33,7 +34,10 @@ public class PlayerController : MonoBehaviour
 
         if (aContext.phase == InputActionPhase.Performed)
         {
+            Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
+            Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y, mainCamera.nearClipPlane));
             Debug.Log("Mouse Clicked!");
+            TaskManager.AddTask(TaskManager.TaskType.Move,mouseWorldPosition);
         }
 
     }

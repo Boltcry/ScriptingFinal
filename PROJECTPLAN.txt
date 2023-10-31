@@ -1,0 +1,33 @@
+Group: Crystal Hicks & Miranda Cruz
+
+Our goal is to make a reimagined version of Cake Mania using the same mechanics but different art & setting. This includes mechanics like:
+	- Making food by preset and stacking toppings (such as cake + frosting + topper) 
+	- Each action is controlled by mouse click
+	- Actions can be queued
+	- There are different types of customers with different patience time, different payment amounts, different order types, etc.
+	- There are different stages (days) and locations
+
+Plan Summary:
+	- Use Scriptable Objects for different Days and different types of Customers
+		- Customers have variables like patience, order type, payment range
+		- Days have variables like # of customers, wait time between customers entering, difficulty of customers that appear
+	- Use Coroutines and Task Manager to handle sequential task queue
+		- Currently using enum for Task types
+	- Use Scene Loading to switch between regular gameplay and world map (that shows all levels) 
+	- Use Pathfinding via waypoints to move the character (not exactly sure how to implement this; grid A* algorithm? list of points?)
+	- Queue of customers with specific capacity; only x number of customers can be in the level at once (but once there is space they will immediately appear)
+
+
+
+
+Current State of Project:
+
+We implemented using the Mouse Left Click to select things using the New Input System, so that we can also use different control schemes if wanted
+	- Clicking calls a Task Manager and adds tasks of different types based on conditions like if the mouse is over a oven button when clicked, or over money.
+	- Different Task Types: Move, StartFood, CollectFood, DeliverFood, CollectMoney
+
+	- Tasks are added to a queue and start if the TaskManager is not already running tasks. Tasks are executed via the Coroutine ExecuteTask which calls different Coroutines in other scripts based on what kind of task it is. 
+		- currently only the Move task has functionality
+
+
+Currently we only have a temporary MoveToTarget method (that is called when executing the Move task) that has basic SmoothDamp but will eventually have pathfinding via waypoints (though not sure exactly how to implement this)
