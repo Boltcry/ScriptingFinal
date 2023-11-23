@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("PlayerControllerScript started");
         playerInput = GetComponent<PlayerInput>();
         selectAction = playerInput.actions["select"];
         
@@ -36,8 +35,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
             Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y, mainCamera.nearClipPlane));
-            Debug.Log("Mouse Clicked!");
-            TaskManager.AddTask(TaskManager.TaskType.Move,mouseWorldPosition);
+            TaskManager.AddTask(new MoveTask(mouseWorldPosition));
         }
 
     }
