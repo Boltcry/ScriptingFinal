@@ -37,6 +37,10 @@ public class PlayerController : MonoBehaviour
             Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y, mainCamera.nearClipPlane));
             RaycastHit2D hit = Physics2D.Raycast(mouseWorldPosition, Vector2.zero, Mathf.Infinity, LayerMask.GetMask("Clickable"));
             
+            
+            TaskManager.AddTask(new MoveTask(mouseWorldPosition));
+            
+
             //Check if player selected a ClickableObject
             if (hit.collider != null)
             {
@@ -47,8 +51,6 @@ public class PlayerController : MonoBehaviour
                     TaskManager.AddTask(new ClickablePressedTask(mouseWorldPosition, clickableObject));
                 }
             }
-            
-            TaskManager.AddTask(new MoveTask(mouseWorldPosition));
         }
 
     }
