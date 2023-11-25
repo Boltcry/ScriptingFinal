@@ -32,9 +32,29 @@ public class MoveTask : Task
         if(TaskManager.me.playerPathFinder != null)
         {
             yield return TaskManager.me.StartCoroutine(TaskManager.me.playerPathFinder.MoveToTarget(mousePosition));
-            Debug.Log("Finished moving to  "+mousePosition);
+            //Debug.Log("Finished moving to  "+mousePosition);
         }
         else yield return null;
+    }
+    
+}
+
+public class ClickablePressedTask : Task
+{
+
+    ClickableObject clickableObject;
+
+    public ClickablePressedTask(Vector2 aMousePosition, ClickableObject aClickableObject): base(aMousePosition)
+    {
+        clickableObject = aClickableObject;
+    }
+
+    public override IEnumerator RunTask()
+    {
+        // start clickable object pressed coroutine, action determined in ClickableObject class
+        clickableObject.OnClicked();
+        Debug.Log("Started clickable object pressed task");
+        yield return null;
     }
     
 }

@@ -35,6 +35,19 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
             Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y, mainCamera.nearClipPlane));
+            RaycastHit2D hit = Physics2D.Raycast(mouseWorldPosition, Vector2.zero, Mathf.Infinity, LayerMask.GetMask("Clickable"));
+            
+            //Check if player selected a ClickableObject
+            if (hit.collider != null)
+            {
+                Debug.Log("Clicked on object in the 'clickable' layer: " + hit.collider.gameObject.name);
+                ClickableObject clickableObject = hit.collider.gameObject.GetComponent<ClickableObject>();
+                if (clickableObject != null)
+                {
+                    TaskManager.AddTask(new ClickablePressedTask(mouseWorldPosition, clickableObject));
+                }
+            }
+            
             TaskManager.AddTask(new MoveTask(mouseWorldPosition));
         }
 
