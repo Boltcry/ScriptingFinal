@@ -39,12 +39,11 @@ public class PlayerController : MonoBehaviour
             
             
             TaskManager.AddTask(new MoveTask(mouseWorldPosition));
-            
+
 
             //Check if player selected a ClickableObject
             if (hit.collider != null)
             {
-                Debug.Log("Clicked on object in the 'clickable' layer: " + hit.collider.gameObject.name);
                 ClickableObject clickableObject = hit.collider.gameObject.GetComponent<ClickableObject>();
                 if (clickableObject != null)
                 {

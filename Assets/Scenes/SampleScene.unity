@@ -353,6 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678b70ccbf2e7cb4f90cbb77f53fac54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
 --- !u!212 &705972568
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -416,26 +417,14 @@ GameObject:
   - component: {fileID: 978828498}
   - component: {fileID: 978828497}
   - component: {fileID: 978828496}
-  - component: {fileID: 978828495}
+  - component: {fileID: 978828499}
   m_Layer: 6
-  m_Name: ClickableObject Test
+  m_Name: Station Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &978828495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 978828494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fad0da7d6c2d664ca806ddae480efce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &978828496
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -529,6 +518,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &978828499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978828494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90841fc3aee1ad542810258a7a3fc3c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2028644132
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClickableObject : MonoBehaviour
+public class Station : ClickableObject
 {
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +16,9 @@ public class ClickableObject : MonoBehaviour
         
     }
 
-    public virtual void OnClicked()
+    public override void OnClicked()
     {
+        Debug.Log("End of Station OnClicked");
 
     }
 }
