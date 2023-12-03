@@ -11,6 +11,12 @@ public class PlayerController : MonoBehaviour
     public Camera mainCamera;
     private PlayerInput playerInput;
     private InputAction selectAction;
+    private Vector3 lastPosition;
+    private Animator anim;
+
+    public float xDirection = 0;
+    public float yDirection = 0;
+    public bool isCarryingFood = false;
 
 
 
@@ -19,13 +25,21 @@ public class PlayerController : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         selectAction = playerInput.actions["select"];
+
+        anim = GetComponent<Animator>();
+        lastPosition = transform.position;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateDirection();
+        lastPosition = transform.position;
+
+        anim.SetFloat("xDirection", xDirection);
+        anim.SetFloat("yDirection", yDirection);
+
     }
 
     public void OnSelect(InputAction.CallbackContext aContext)
@@ -52,6 +66,17 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+    }
+
+    void UpdateDirection()
+    {
+        // Calculate direction vector for animation
+        Vector3 direction = transform.position - lastPosition;
+
+        direction.Normalize();
+
+        xDirection = direction.x;
+        yDirection = direction.y;
     }
 
 }
