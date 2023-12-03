@@ -54,13 +54,19 @@ public class PathfindingNode : MonoBehaviour
         return path;
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(transform.position, 0.3f);
 
         foreach (PathfindingNode neighbor in connectedNodes) {
-            Gizmos.DrawLine(transform.position, neighbor.transform.position);
+            if(neighbor != null)
+            {
+                Gizmos.DrawLine(transform.position, neighbor.transform.position);
+            }
         }
     }
+#endif
+
 }
