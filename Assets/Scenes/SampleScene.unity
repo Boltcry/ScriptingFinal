@@ -776,7 +776,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678b70ccbf2e7cb4f90cbb77f53fac54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   speed: 6
+=======
+  speed: 10
+>>>>>>> Stashed changes
 --- !u!212 &705972568
 SpriteRenderer:
   m_ObjectHideFlags: 0
