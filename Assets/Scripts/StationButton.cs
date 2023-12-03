@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class StationButton : ClickableObject
 {
-    // Start is called before the first frame update
+
+    public Food foodData;
+
+
+
+
     void Start()
     {
-        
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if(foodData != null)
+        {
+            spriteRenderer.sprite = foodData.sprite;
+        }
+
+        base.CreateButtonOutline();
+
     }
 
-    // Update is called once per frame
+ 
     void Update()
     {
         
@@ -18,7 +31,14 @@ public class StationButton : ClickableObject
 
     public override void OnClicked()
     {
+        if(transform.parent != null)
+        {
+            transform.parent.StartCooking(foodData);
+        }
+
         Debug.Log("End of StationButton OnClicked");
 
     }
+
+
 }

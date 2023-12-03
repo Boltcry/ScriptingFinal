@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private InputAction selectAction;
     private Vector3 lastPosition;
     private Animator anim;
+    private SpriteRenderer spriteRenderer;
 
     public float xDirection = 0;
     public float yDirection = 0;
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         selectAction = playerInput.actions["select"];
 
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         anim = GetComponent<Animator>();
         lastPosition = transform.position;
         
@@ -34,11 +37,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        spriteRenderer.sortingOrder = Mathf.FloorToInt(-transform.position.y * 10);
+
         UpdateDirection();
         lastPosition = transform.position;
 
         anim.SetFloat("xDirection", xDirection);
         anim.SetFloat("yDirection", yDirection);
+
 
     }
 

@@ -15,6 +15,7 @@ public class Food : ScriptableObject
     }
 
     public Sprite sprite;
+    public Type type;
 
 
 }

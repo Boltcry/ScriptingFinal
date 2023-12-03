@@ -4,21 +4,42 @@ using UnityEngine;
 
 public class Station : ClickableObject
 {
-    // Start is called before the first frame update
+
+    public float cookDuration = 6f;
+    float timer = 0f;
+
+    Animator anim;
+    bool isCooking = false;
+
+
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        if (isCooking)
+        {
+            timer += Time.deltaTime;
+
+            if (timer >= cookDuration)
+            {
+                isCooking = false;
+            }
+        }
     }
 
     public override void OnClicked()
     {
         Debug.Log("End of Station OnClicked");
 
+    }
+
+    public void StartCooking()
+    {
+        isCooking = true;
+        
     }
 }
