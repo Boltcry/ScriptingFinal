@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4ca7af006e9d04b9de138ec5143d5f, type: 3}
   m_Name: Lamb
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: dc530fe196e9e844fb125a0ae8359751, type: 3}
   type: 0

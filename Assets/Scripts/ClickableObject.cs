@@ -10,7 +10,6 @@ public class ClickableObject : MonoBehaviour
     float outlineScale = 1.2f;
 
 
-
     public virtual void OnClicked()
     {
 
@@ -20,7 +19,6 @@ public class ClickableObject : MonoBehaviour
     {
         if(outlineObject != null)
         {
-            Debug.Log("Mouse is over " + name);
             outlineObject.SetActive(true);
         }
     }
@@ -29,7 +27,6 @@ public class ClickableObject : MonoBehaviour
     {
         if(outlineObject != null)
         {
-            Debug.Log("Mouse is no longer on " + name);
             outlineObject.SetActive(false);
         }
     }
@@ -48,10 +45,11 @@ public class ClickableObject : MonoBehaviour
         // Adjust the SpriteRenderer properties for the outline
         SpriteRenderer outlineRenderer = outlineObject.AddComponent<SpriteRenderer>();
         outlineRenderer.sprite = spriteRenderer.sprite;
-        outlineRenderer.color = Color.white;
+        outlineRenderer.color = Color.black;
+        outlineRenderer.sortingLayerName = "Buttons";
         outlineRenderer.sortingOrder = spriteRenderer.sortingOrder - 1;
 
         outlineObject.SetActive(false);
-        Debug.Log("new outlineObject created");
     }
+
 }

@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd4ca7af006e9d04b9de138ec5143d5f, type: 3}
-  m_Name: Potato (Carb)
+  m_Name: Empty (Vegetable)
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 4a90cae02f9cc1c478f3fee5c7dfb30a, type: 3}
-  type: 2
+  sprite: {fileID: 21300000, guid: 68104999ab7718d4798955d84e3e7d24, type: 3}
+  type: 1
+  isEmpty: 1

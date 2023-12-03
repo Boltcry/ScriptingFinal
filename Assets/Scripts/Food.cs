@@ -2,20 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[CreateAssetMenu(fileName = "NewFood", menuName = "ScriptableObjects/Food")]
-public class Food : ScriptableObject
+public class Food : ClickableObject
 {
-    public enum Type
+
+    public FoodScriptable foodData;
+
+
+
+    void Start()
     {
-        Meat,
-        Vegetable,
-        Carb,
-        Drink
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        UpdateSpriteToFoodData();
+
+        base.CreateButtonOutline();
+
+
     }
 
-    public Sprite sprite;
-    public Type type;
 
+    void Update()
+    {
+        
+    }
+
+    public override void OnClicked()
+    {
+        //
+    }
+
+    public void SetFoodData(FoodScriptable aFoodData)
+    {
+        foodData = aFoodData;
+        UpdateSpriteToFoodData();
+
+    }
+
+    void UpdateSpriteToFoodData()
+    {
+        if (foodData != null)
+        {
+            spriteRenderer.sprite = foodData.sprite;
+        }
+    }
 
 }

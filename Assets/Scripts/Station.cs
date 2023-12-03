@@ -11,10 +11,18 @@ public class Station : ClickableObject
     Animator anim;
     bool isCooking = false;
 
+    Food readyFood;
+    FoodScriptable foodToMake;
+    public ProgressBar progressBar;
+
 
     void Start()
     {
+        readyFood = transform.Find("Food")?.GetComponent<Food>();
+
         anim = GetComponent<Animator>();
+
+
     }
 
 
@@ -23,10 +31,15 @@ public class Station : ClickableObject
         if (isCooking)
         {
             timer += Time.deltaTime;
+            float cookingProgress = Mathf.Clamp01(timer / cookDuration);
+            if(progressBar != null)
+            {
+                progressBar.UpdateProgressBar(cookingProgress);
+            }
 
             if (timer >= cookDuration)
             {
-                isCooking = false;
+                FinishCooking();
             }
         }
     }
@@ -37,9 +50,24 @@ public class Station : ClickableObject
 
     }
 
-    public void StartCooking()
+    public void StartCooking(FoodScriptable aFoodData)
     {
         isCooking = true;
-        
+        timer = 0f;
+        anim.SetBool("isCooking", isCooking);
+        foodToMake = aFoodData;
+        Debug.Log("Cooking Started!");
+        progressBar.gameObject.SetActive(true);
+        progressBar.UpdateProgressBar(0f);
+
+    }
+
+    void FinishCooking()
+    {
+        isCooking = false;
+        anim.SetBool("isCooking", isCooking);
+        readyFood.SetFoodData(foodToMake);
+        Debug.Log("Cooking Finished!");
+        progressBar.gameObject.SetActive(false);
     }
 }

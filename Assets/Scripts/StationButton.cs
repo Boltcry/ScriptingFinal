@@ -5,14 +5,13 @@ using UnityEngine;
 public class StationButton : ClickableObject
 {
 
-    public Food foodData;
+    public FoodScriptable foodData;
 
 
 
 
     void Start()
     {
-
         spriteRenderer = GetComponent<SpriteRenderer>();
         if(foodData != null)
         {
@@ -31,10 +30,7 @@ public class StationButton : ClickableObject
 
     public override void OnClicked()
     {
-        if(transform.parent != null)
-        {
-            transform.parent.StartCooking(foodData);
-        }
+        transform.parent?.GetComponent<Station>()?.StartCooking(foodData);
 
         Debug.Log("End of StationButton OnClicked");
 

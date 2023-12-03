@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour
                 ClickableObject clickableObject = hit.collider.gameObject.GetComponent<ClickableObject>();
                 if (clickableObject != null)
                 {
+                    Debug.Log("Added clickable task");
                     TaskManager.AddTask(new ClickablePressedTask(mouseWorldPosition, clickableObject));
                 }
             }
