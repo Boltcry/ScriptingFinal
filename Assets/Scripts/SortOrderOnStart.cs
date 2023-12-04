@@ -7,7 +7,7 @@ public class SortOrderOnStart : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
 
-    void Start()
+    void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         if(spriteRenderer != null)

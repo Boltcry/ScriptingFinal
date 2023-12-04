@@ -183,9 +183,21 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 563fd76e67a28dd4f9a06f4f909250ba, type: 3}
+    - target: {fileID: 783949996933042668, guid: 8d8eaaa33f8352542823b42e58bed17b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 783949996933042668, guid: 8d8eaaa33f8352542823b42e58bed17b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 783949996933042668, guid: 8d8eaaa33f8352542823b42e58bed17b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 783949996933042672, guid: 8d8eaaa33f8352542823b42e58bed17b, type: 3}
       propertyPath: m_Name
-      value: Station
+      value: Keg
       objectReference: {fileID: 0}
     - target: {fileID: 783949996933042673, guid: 8d8eaaa33f8352542823b42e58bed17b, type: 3}
       propertyPath: m_RootOrder

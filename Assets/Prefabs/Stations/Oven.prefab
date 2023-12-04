@@ -69,11 +69,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 783949996933042668, guid: 8d8eaaa33f8352542823b42e58bed17b, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 783949996933042668, guid: 8d8eaaa33f8352542823b42e58bed17b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 101
       objectReference: {fileID: 0}
     - target: {fileID: 783949996933042668, guid: 8d8eaaa33f8352542823b42e58bed17b, type: 3}
       propertyPath: m_SortingLayerID
-      value: -1061033199
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 783949996933042669, guid: 8d8eaaa33f8352542823b42e58bed17b, type: 3}
       propertyPath: progressBar
