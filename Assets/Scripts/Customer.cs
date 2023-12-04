@@ -90,5 +90,7 @@ public class Customer : ClickableObject
         orderBubble.gameObject.SetActive(false);
         money.gameObject.SetActive(true);
         SetCustomerData(originalCustomerData);
+        PlayerPlate.Instance.ResetPlate();
+        plate.ResetPlate();
     }
 }

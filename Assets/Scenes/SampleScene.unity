@@ -1402,7 +1402,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 362167750}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -390, y: 177, z: -4615.5205}
+  m_LocalPosition: {x: -491, y: 209, z: -4615.5205}
   m_LocalScale: {x: 83.08317, y: 83.08317, z: 83.08317}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5540,7 +5540,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094193148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -390, y: 176, z: -4615.5205}
+  m_LocalPosition: {x: -490.99997, y: 208.00002, z: -4615.5205}
   m_LocalScale: {x: 69.41743, y: 69.41743, z: 69.41743}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5637,6 +5637,10 @@ MonoBehaviour:
   - {fileID: 1282458553}
   - {fileID: 1956963163}
   - {fileID: 616732793}
+  emptyFoodData:
+  - {fileID: 11400000, guid: f07dde5d9e14d354c9a56c1e67778432, type: 2}
+  - {fileID: 11400000, guid: 86bef6989ec3c6146bdf2a371825b930, type: 2}
+  - {fileID: 11400000, guid: b84d2e1f834c063449ecf162962aff09, type: 2}
 --- !u!1 &1165648137
 GameObject:
   m_ObjectHideFlags: 0
@@ -8525,7 +8529,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 382, y: -225}
+  m_AnchoredPosition: {x: -437, y: -224}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1597134033
@@ -9100,7 +9104,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -338, y: -225}
+  m_AnchoredPosition: {x: -437, y: -146}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1750532827
