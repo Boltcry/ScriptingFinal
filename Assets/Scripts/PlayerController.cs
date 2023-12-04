@@ -67,7 +67,6 @@ public class PlayerController : MonoBehaviour
                 ClickableObject clickableObject = hit.collider.gameObject.GetComponent<ClickableObject>();
                 if (clickableObject != null)
                 {
-                    Debug.Log("Added clickable task");
                     TaskManager.AddTask(new ClickablePressedTask(mouseWorldPosition, clickableObject));
                 }
             }
@@ -84,6 +83,12 @@ public class PlayerController : MonoBehaviour
 
         xDirection = direction.x;
         yDirection = direction.y;
+    }
+
+    public void SetIsCarryingFood(bool aIsCarryingFood)
+    {
+        isCarryingFood = aIsCarryingFood;
+        anim.SetBool("isCarryingFood", isCarryingFood);
     }
 
 }

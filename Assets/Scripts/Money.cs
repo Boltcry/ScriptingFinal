@@ -9,7 +9,7 @@ public class Money : ClickableObject
 
     void Start()
     {
-
+        spriteRenderer = GetComponent<SpriteRenderer>();
         base.CreateButtonOutline();
         
     }
