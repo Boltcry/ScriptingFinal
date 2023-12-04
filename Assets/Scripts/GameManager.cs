@@ -7,7 +7,10 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour
 {
     public ClockHandMovement clockHand;
+
     public TextMeshProUGUI levelCompleteText;
+    public TextMeshProUGUI moneyText;
+    public TextMeshProUGUI moneyGoalText;
 
     public DayScriptable currentDayData;
     public List<Customer> customerGameObjectsInScene = new List<Customer>();
@@ -25,6 +28,9 @@ public class GameManager : MonoBehaviour
             Debug.Log("Day Duration:" + currentDayData.dayDuration);
             Debug.Log("Money Goal:" + currentDayData.moneyGoal);
         }
+
+        UpdateMoney(0);
+        DisplayMoneyGoal();
 
         RotateHandOnClick(currentDayData.dayDuration);
 
@@ -91,9 +97,16 @@ public class GameManager : MonoBehaviour
     {
         currentMoney += moneyEarned;
 
+        moneyText.text = "Current Earnings: " + currentMoney.ToString();
+
         Debug.Log("Current Money:" + currentMoney);
     }
-    
+
+    private void DisplayMoneyGoal()
+    {
+        moneyGoalText.text = "Money Goal: " + currentDayData.moneyGoal.ToString();
+    }
+
 
 
     void SpawnCustomer(Customer aCustomer)

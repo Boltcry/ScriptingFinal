@@ -11,5 +11,5 @@ public class DayScriptable : ScriptableObject
 
     public List<float> customerEntryTimes = new List<float>();
 
-    public int moneyGoal = 1000;
+    public int moneyGoal = 100;
 }
