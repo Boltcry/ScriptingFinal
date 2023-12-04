@@ -48,7 +48,6 @@ public class GameManager : MonoBehaviour
             Customer vacantSpot = GetVacantSpot(customerGameObjectsInScene);
             if (vacantSpot != null)
             {
-                Debug.Log(" Vacant spot discovered!!");
                 SpawnCustomer(vacantSpot);
             }
         }
@@ -60,9 +59,9 @@ public class GameManager : MonoBehaviour
         {
             if(aCustomer.customerData.isVacant)
             {
+                //Debug.Log(" Vacant spot discovered!!");
                 return aCustomer;
             }
-            Debug.Log(aCustomer.customerData.isVacant + "");
         }
         return null;
     }
@@ -100,9 +99,8 @@ public class GameManager : MonoBehaviour
 
     void SpawnCustomer(Customer aCustomer)
     {
-        Debug.Log("Spawning customer");
+        //Debug.Log("Spawning customer");
         CustomerScriptable customerData = customersReadyToEnterScene.Dequeue();
-        aCustomer.customerData = customerData;
-        aCustomer.customerData.isVacant = false;
+        aCustomer.SetCustomerData(customerData);
     }
 }
