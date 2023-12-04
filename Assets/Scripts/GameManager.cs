@@ -108,7 +108,6 @@ public class GameManager : MonoBehaviour
 
         moneyText.text = "Current Earnings: " + currentMoney.ToString();
 
-        Debug.Log("Current Money:" + currentMoney);
     }
 
     private void DisplayMoneyGoal()

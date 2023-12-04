@@ -6,7 +6,27 @@ public class Plate : MonoBehaviour
 {
 
     public List<Food> foodsOnPlate = new List<Food>();
+    public List<FoodScriptable> emptyFoodData = new List<FoodScriptable>();
+    List<Food> originalFoodsOnPlate;
 
+
+    void Start()
+    {
+        originalFoodsOnPlate = foodsOnPlate;
+    }
+
+    public void ResetPlate()
+    {
+        int index = 0;
+        foreach(Food food in foodsOnPlate)
+        {
+            Debug.Log(foodsOnPlate.Count+"  foodsOnPlateCount");
+            Debug.Log(emptyFoodData.Count+"  emptyFoodDataCount");
+            food.SetFoodData(emptyFoodData[index]);
+            index++;
+        }
+        Debug.Log("Plate Reset");
+    }
 
     public bool IsEmpty()
     {
