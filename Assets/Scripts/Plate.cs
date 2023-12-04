@@ -8,7 +8,6 @@ public class Plate : MonoBehaviour
     public List<Food> foodsOnPlate = new List<Food>();
 
 
-
     public bool IsEmpty()
     {
         foreach(Food food in foodsOnPlate)
@@ -61,6 +60,28 @@ public class Plate : MonoBehaviour
                 Food.SwapFoodData(food, aFood);
             }
         }
+    }
+
+    public bool HasSameFoods(Plate otherPlate)
+    {
+        // Create sets of food data for efficient comparison
+        HashSet<FoodScriptable> thisPlateFoodData = new HashSet<FoodScriptable>();
+        HashSet<FoodScriptable> otherPlateFoodData = new HashSet<FoodScriptable>();
+
+        // Populate sets with food types from the current plate
+        foreach (Food food in foodsOnPlate)
+        {
+            thisPlateFoodData.Add(food.foodData);
+        }
+
+        // Populate sets with food types from the other plate
+        foreach (Food food in otherPlate.foodsOnPlate)
+        {
+            otherPlateFoodData.Add(food.foodData);
+        }
+
+        // Check if the sets are equal
+        return thisPlateFoodData.SetEquals(otherPlateFoodData);
     }
 
 

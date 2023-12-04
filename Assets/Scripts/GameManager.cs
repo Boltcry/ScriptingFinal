@@ -84,13 +84,12 @@ public class GameManager : MonoBehaviour
             levelCompleteText.gameObject.SetActive(true);
         }
 
-        UpdateMoney();
     }
 
 
-    void UpdateMoney()
+    public void UpdateMoney(int moneyEarned)
     {
-        currentMoney += currentDayData.moneyGoal;
+        currentMoney += moneyEarned;
 
         Debug.Log("Current Money:" + currentMoney);
     }

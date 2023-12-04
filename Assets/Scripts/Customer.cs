@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class Customer : ClickableObject
 {
+    public Plate plate;
+    public OrderBubble orderBubble;
     public CustomerScriptable customerData;
+    public Money money;
     private bool hasOrdered;
     private float menuLookDuration = 6f;
+    private CustomerScriptable originalCustomerData;
     
     void Start()
     {
+        plate = transform.Find("Plate")?.GetComponent<Plate>();
+        orderBubble = transform.Find("orderBubble")?.GetComponent<OrderBubble>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         UpdateSpriteToCustomerData();
 
         base.CreateButtonOutline(); 
+
+        originalCustomerData = customerData;
     }
 
     void Update()
@@ -25,7 +33,15 @@ public class Customer : ClickableObject
     {
         if (!hasOrdered)
         {
+            Debug.Log("Customer has started order");
             StartCoroutine(LookAtMenuCoroutine());
+        }
+        else
+        {
+            if(plate.HasSameFoods(PlayerPlate.Instance))
+            {
+                Leave();
+            }
         }
     }
 
@@ -36,12 +52,13 @@ public class Customer : ClickableObject
         yield return new WaitForSeconds(menuLookDuration);
 
 
-        if (customerData != null && customerData.orders.Count > 0)
+        if (customerData != null && customerData.preferredOrder.Count > 0)
         {
-            FoodScriptable customerOrder = customerData.orders[Random.Range(0, customerData.orders.Count)];
+            SetCustomerOrder(customerData.preferredOrder);
 
-            Debug.Log("Customer ordered:" + customerOrder.foodName);
+            Debug.Log("Customer ordered");
         }
+        orderBubble.gameObject.SetActive(true);
     }
 
     public void SetCustomerData(CustomerScriptable aCustomerData)
@@ -50,11 +67,28 @@ public class Customer : ClickableObject
         UpdateSpriteToCustomerData();
     }
 
+    public void SetCustomerOrder(List<FoodScriptable> aPreferredOrder)
+    {
+        int index = 0;
+        foreach(Food aFood in plate.foodsOnPlate)
+        {
+            aFood.SetFoodData(aPreferredOrder[index]);
+            index++;
+        }
+    }
+
     void UpdateSpriteToCustomerData()
     {
         if (customerData != null)
         {
             spriteRenderer.sprite = customerData.sprite;
         }
+    }
+
+    void Leave()
+    {
+        orderBubble.gameObject.SetActive(false);
+        money.gameObject.SetActive(true);
+        SetCustomerData(originalCustomerData);
     }
 }

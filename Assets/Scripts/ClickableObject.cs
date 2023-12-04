@@ -19,7 +19,10 @@ public class ClickableObject : MonoBehaviour
     {
         if(outlineObject != null)
         {
-            outlineObject.SetActive(true);
+            if(GetComponent<Collider2D>() != null)
+            {
+                outlineObject.SetActive(true);
+            }
         }
     }
 
@@ -27,7 +30,10 @@ public class ClickableObject : MonoBehaviour
     {
         if(outlineObject != null)
         {
-            outlineObject.SetActive(false);
+            if(GetComponent<Collider2D>() != null)
+            {
+                outlineObject.SetActive(false);
+            }
         }
     }
 
@@ -46,6 +52,7 @@ public class ClickableObject : MonoBehaviour
         SpriteRenderer outlineRenderer = outlineObject.AddComponent<SpriteRenderer>();
         outlineRenderer.sprite = spriteRenderer.sprite;
         outlineRenderer.color = Color.black;
+        outlineRenderer.sortingLayerName = spriteRenderer.sortingLayerName;
         outlineRenderer.sortingOrder = spriteRenderer.sortingOrder - 1;
 
         outlineObject.SetActive(false);

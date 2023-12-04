@@ -5,10 +5,16 @@ using UnityEngine;
 public class Money : ClickableObject
 {
 
+    public GameManager gameManager;
 
 
     void Start()
     {
+        if(gameManager == null)
+        {
+            gameManager = FindObjectOfType<GameManager>();
+        }
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         base.CreateButtonOutline();
         
@@ -17,6 +23,7 @@ public class Money : ClickableObject
 
     public override void OnClicked()
     {
-        
+        gameManager.UpdateMoney(30);
+        gameObject.SetActive(false);
     }
 }

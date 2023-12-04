@@ -8,6 +8,6 @@ public class CustomerScriptable : ScriptableObject
     public Sprite sprite;
     public bool isVacant = true;
 
-    public List<FoodScriptable> orders = new List<FoodScriptable>();
+    public List<FoodScriptable> preferredOrder = new List<FoodScriptable>();
 
 }
