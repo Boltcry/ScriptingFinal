@@ -6,6 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewFood", menuName = "ScriptableObjects/Food")]
 public class FoodScriptable : ScriptableObject
 {
+    public string foodName;
+
     public enum Type
     {
         Meat,

@@ -11,7 +11,7 @@ public class ClockHandMovement : MonoBehaviour
         StartCoroutine(RotateHandCoroutine(targetRotation, duration));
     }
 
-    private IEnumerator RotateHandCoroutine(Quaternion targetRotation, float duration)
+    public IEnumerator RotateHandCoroutine(Quaternion targetRotation, float duration)
     {
         float elapsed = 0f;
         Quaternion startRotation = transform.rotation;
