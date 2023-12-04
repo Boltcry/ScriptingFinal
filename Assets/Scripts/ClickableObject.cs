@@ -46,7 +46,6 @@ public class ClickableObject : MonoBehaviour
         SpriteRenderer outlineRenderer = outlineObject.AddComponent<SpriteRenderer>();
         outlineRenderer.sprite = spriteRenderer.sprite;
         outlineRenderer.color = Color.black;
-        outlineRenderer.sortingLayerName = "Buttons";
         outlineRenderer.sortingOrder = spriteRenderer.sortingOrder - 1;
 
         outlineObject.SetActive(false);

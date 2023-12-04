@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4602299736563829402}
   - component: {fileID: 4602299736563829401}
   - component: {fileID: 4602299736563829400}
-  - component: {fileID: 4602299736563829407}
   m_Layer: 6
   m_Name: Station Button
   m_TagString: Untagged
@@ -87,7 +86,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 184714289
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 82be8592f6be0b1489be54d80b56e5c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -126,15 +125,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.40625, y: 0.46875}
   m_EdgeRadius: 0
---- !u!114 &4602299736563829407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4602299736563829405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a2210e78b493424da177732a5e358b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

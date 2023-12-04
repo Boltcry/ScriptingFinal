@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1500561831269147631}
   - component: {fileID: 1500561831269147630}
   - component: {fileID: 1500561831269147617}
-  - component: {fileID: 1500561831269147616}
   m_Layer: 6
   m_Name: Station Button 3
   m_TagString: Untagged
@@ -126,18 +125,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4371364, y: 0.33834076}
   m_EdgeRadius: 0
---- !u!114 &1500561831269147616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500561831269147618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a2210e78b493424da177732a5e358b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1500561831878124080
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +137,6 @@ GameObject:
   - component: {fileID: 1500561831878124093}
   - component: {fileID: 1500561831878124092}
   - component: {fileID: 1500561831878124095}
-  - component: {fileID: 1500561831878124094}
   m_Layer: 6
   m_Name: Station Button 2
   m_TagString: Untagged
@@ -264,18 +250,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.40625, y: 0.33834064}
   m_EdgeRadius: 0
---- !u!114 &1500561831878124094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500561831878124080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a2210e78b493424da177732a5e358b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1500561832308445482
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +262,6 @@ GameObject:
   - component: {fileID: 1500561832308445495}
   - component: {fileID: 1500561832308445494}
   - component: {fileID: 1500561832308445481}
-  - component: {fileID: 1500561832308445480}
   m_Layer: 6
   m_Name: Station Button 4
   m_TagString: Untagged
@@ -402,18 +375,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.50920486, y: 0.4344318}
   m_EdgeRadius: 0
---- !u!114 &1500561832308445480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500561832308445482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a2210e78b493424da177732a5e358b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1500561833169892712
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +386,6 @@ GameObject:
   - component: {fileID: 1500561833169892713}
   - component: {fileID: 1500561833169892725}
   - component: {fileID: 1500561833169892724}
-  - component: {fileID: 1500561833169892727}
   - component: {fileID: 1500561833169892726}
   m_Layer: 6
   m_Name: Cutboard
@@ -520,18 +480,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1500561833169892727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500561833169892712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a2210e78b493424da177732a5e358b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1500561833169892726
 Animator:
   serializedVersion: 5

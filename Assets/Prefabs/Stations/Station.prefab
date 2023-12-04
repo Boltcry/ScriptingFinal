@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 783949995593942903}
   - component: {fileID: 783949995593942902}
   - component: {fileID: 783949995593942905}
-  - component: {fileID: 783949995593942904}
   m_Layer: 6
   m_Name: Station Button 3
   m_TagString: Untagged
@@ -126,18 +125,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.40625, y: 0.46875}
   m_EdgeRadius: 0
---- !u!114 &783949995593942904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783949995593942906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a2210e78b493424da177732a5e358b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &783949996346017448
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +137,6 @@ GameObject:
   - component: {fileID: 783949996346017445}
   - component: {fileID: 783949996346017444}
   - component: {fileID: 783949996346017447}
-  - component: {fileID: 783949996346017446}
   m_Layer: 6
   m_Name: Station Button 2
   m_TagString: Untagged
@@ -264,18 +250,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.40625, y: 0.46875}
   m_EdgeRadius: 0
---- !u!114 &783949996346017446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783949996346017448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a2210e78b493424da177732a5e358b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &783949996767868338
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +262,6 @@ GameObject:
   - component: {fileID: 783949996767868335}
   - component: {fileID: 783949996767868334}
   - component: {fileID: 783949996767868337}
-  - component: {fileID: 783949996767868336}
   m_Layer: 6
   m_Name: Station Button 4
   m_TagString: Untagged
@@ -402,18 +375,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.40625, y: 0.46875}
   m_EdgeRadius: 0
---- !u!114 &783949996767868336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783949996767868338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a2210e78b493424da177732a5e358b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &783949996933042672
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +386,6 @@ GameObject:
   - component: {fileID: 783949996933042673}
   - component: {fileID: 783949996933042669}
   - component: {fileID: 783949996933042668}
-  - component: {fileID: 783949996933042671}
   - component: {fileID: 783949996933042670}
   m_Layer: 6
   m_Name: Station
@@ -520,18 +480,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &783949996933042671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783949996933042672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a2210e78b493424da177732a5e358b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &783949996933042670
 Animator:
   serializedVersion: 5
