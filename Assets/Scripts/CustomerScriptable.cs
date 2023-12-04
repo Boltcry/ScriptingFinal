@@ -6,6 +6,7 @@ using UnityEngine;
 public class CustomerScriptable : ScriptableObject
 {
     public Sprite sprite;
+    public bool isVacant = true;
 
     public List<FoodScriptable> orders = new List<FoodScriptable>();
 

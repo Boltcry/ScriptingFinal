@@ -10,9 +10,12 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI levelCompleteText;
 
     public DayScriptable currentDayData;
-    public List<GameObject> customerGameObjectsInScene = new List<GameObject>();
-    public List<CustomerScriptable> customersReadyToEnterScene = new List<CustomerScriptable>();
+    public List<Customer> customerGameObjectsInScene = new List<Customer>();
+    public Queue<CustomerScriptable> customersReadyToEnterScene = new Queue<CustomerScriptable>();
+    public int index = 0;
     public int currentMoney = 0;
+
+    float timeElapsed = 0f;
 
 
     private void Start()
@@ -23,9 +26,45 @@ public class GameManager : MonoBehaviour
             Debug.Log("Money Goal:" + currentDayData.moneyGoal);
         }
 
-        RotateHandOnClick(100f);
+        RotateHandOnClick(currentDayData.dayDuration);
 
-        StartCoroutine(SpawnCustomersOverTime());
+    }
+
+    void Update()
+    {
+        timeElapsed += Time.deltaTime;
+        if(index < currentDayData.customerEntryTimes.Count)
+        {
+            if (timeElapsed >= currentDayData.customerEntryTimes[index])
+            {
+                customersReadyToEnterScene.Enqueue(currentDayData.customers[index]);
+                index++;
+            }
+        }
+
+        if(customersReadyToEnterScene.Count > 0)
+        {
+            Debug.Log("customers ready to enter scene are " + customersReadyToEnterScene.Count);
+            Customer vacantSpot = GetVacantSpot(customerGameObjectsInScene);
+            if (vacantSpot != null)
+            {
+                Debug.Log(" Vacant spot discovered!!");
+                SpawnCustomer(vacantSpot);
+            }
+        }
+    }
+
+    Customer GetVacantSpot(List<Customer> aCustomers)
+    {
+        foreach(Customer aCustomer in aCustomers)
+        {
+            if(aCustomer.customerData.isVacant)
+            {
+                return aCustomer;
+            }
+            Debug.Log(aCustomer.customerData.isVacant + "");
+        }
+        return null;
     }
 
     private void RotateHandOnClick(float duration)
@@ -46,22 +85,9 @@ public class GameManager : MonoBehaviour
             levelCompleteText.gameObject.SetActive(true);
         }
 
-        UpdateCustomerLists();
         UpdateMoney();
     }
 
-    void UpdateCustomerLists()
-    {
-        customersReadyToEnterScene.AddRange(currentDayData.customers);
-
-        foreach (CustomerScriptable customerData in customersReadyToEnterScene)
-        {
-            GameObject customerGameObject = InstantiateCustomerGameObject(customerData);
-            customerGameObjectsInScene.Add(customerGameObject);
-        }
-
-        customersReadyToEnterScene.Clear();
-    }
 
     void UpdateMoney()
     {
@@ -70,31 +96,13 @@ public class GameManager : MonoBehaviour
         Debug.Log("Current Money:" + currentMoney);
     }
     
-    GameObject InstantiateCustomerGameObject(CustomerScriptable customerData)
-    {
-        GameObject customerGameObject = new GameObject("Customer");
-        
-        return customerGameObject;
-    }
 
-    IEnumerator SpawnCustomersOverTime()
-    {
-        foreach (float entryTime in currentDayData.customerEntryTimes)
-        {
-            yield return new WaitForSeconds(entryTime);
 
-            SpawnCustomer();
-        }
-    }
-
-    void SpawnCustomer()
+    void SpawnCustomer(Customer aCustomer)
     {
-        if (customersReadyToEnterScene.Count > 0)
-        {
-            CustomerScriptable customerData = customersReadyToEnterScene[0];
-            GameObject customerGameObject = InstantiateCustomerGameObject(customerData);
-            customerGameObjectsInScene.Add(customerGameObject);
-            customersReadyToEnterScene.RemoveAt(0);
-        }
+        Debug.Log("Spawning customer");
+        CustomerScriptable customerData = customersReadyToEnterScene.Dequeue();
+        aCustomer.customerData = customerData;
+        aCustomer.customerData.isVacant = false;
     }
 }

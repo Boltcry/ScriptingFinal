@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91f41026c656bd3459db99ee33c96f4a, type: 3}
-  m_Name: NewCustomer
+  m_Name: EmptyCustomer
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: eeca89d5d37fbff43be3f5825c4145b4, type: 3}
-  isVacant: 0
+  sprite: {fileID: 21300000, guid: 68104999ab7718d4798955d84e3e7d24, type: 3}
+  isVacant: 1
   orders: []

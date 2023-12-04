@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: NewDay
   m_EditorClassIdentifier: 
   dayDuration: 100
-  customers: []
-  customerEntryTimes: []
+  customers:
+  - {fileID: 11400000, guid: 137b154242f9a164eabf65db206424de, type: 2}
+  - {fileID: 11400000, guid: 137b154242f9a164eabf65db206424de, type: 2}
+  customerEntryTimes:
+  - 3
+  - 5
   moneyGoal: 1000

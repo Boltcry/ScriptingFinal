@@ -124,4 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03ffacf73f71b1e47a19f8fd9de29b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customerData: {fileID: 0}
+  customerData: {fileID: 11400000, guid: f1bdc43001ad5504f8f00b5acebb7240, type: 2}
+  isVacant: 1
