@@ -47,7 +47,6 @@ public class Station : ClickableObject
 
     public override void OnClicked()
     {
-        Debug.Log("End of Station OnClicked");
 
     }
 
@@ -57,7 +56,6 @@ public class Station : ClickableObject
         timer = 0f;
         anim.SetBool("isCooking", isCooking);
         foodToMake = aFoodData;
-        Debug.Log("Cooking Started!");
         progressBar.gameObject.SetActive(true);
         progressBar.UpdateProgressBar(0f);
 
@@ -68,7 +66,6 @@ public class Station : ClickableObject
         isCooking = false;
         anim.SetBool("isCooking", isCooking);
         readyFood.SetFoodData(foodToMake);
-        Debug.Log("Cooking Finished!");
         progressBar.gameObject.SetActive(false);
     }
 
