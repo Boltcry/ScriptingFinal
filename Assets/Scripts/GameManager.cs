@@ -32,8 +32,7 @@ public class GameManager : MonoBehaviour
         UpdateMoney(0);
         DisplayMoneyGoal();
 
-        RotateHandOnClick(currentDayData.dayDuration);
-
+        StartCoroutine(PlayLevel());
     }
 
     void Update()
@@ -76,20 +75,30 @@ public class GameManager : MonoBehaviour
     {
         if (clockHand != null)
         {
-            StartCoroutine(WhenTimerDone(duration));
+            StartCoroutine(PlayLevel());
         }
     }
 
-    private IEnumerator WhenTimerDone(float duration)
+    private IEnumerator PlayLevel()
     {
-        yield return clockHand.RotateHandCoroutine(Quaternion.Euler(0f, 0f, 360f), duration);
+        yield return clockHand.RotateHandCoroutine(Quaternion.Euler(0f, 0f, 360f), currentDayData.dayDuration);
 
-        if (levelCompleteText != null)
+        if (currentMoney >= currentDayData.moneyGoal)
         {
-            levelCompleteText.text = "Level Complete!";
-            levelCompleteText.gameObject.SetActive(true);
+            if (levelCompleteText != null)
+            {
+                levelCompleteText.text = "Level Complete!";
+                levelCompleteText.gameObject.SetActive(true);
+            }
         }
-
+        else
+        {
+            if (levelCompleteText != null)
+            {
+                levelCompleteText.text = "Level Failed...";
+                levelCompleteText.gameObject.SetActive(true);
+            }
+        }
     }
 
 
