@@ -32,7 +32,6 @@ public class StationButton : ClickableObject
     {
         transform.parent?.GetComponent<Station>()?.StartCooking(foodData);
 
-        Debug.Log("End of StationButton OnClicked");
 
     }
 
