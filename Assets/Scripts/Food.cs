@@ -28,20 +28,21 @@ public class Food : ClickableObject
 
     public override void OnClicked()
     {
-        Debug.Log("Food clicked!");
+        //Debug.Log("Food clicked!");
         if(plate != null) //if the food has a plate
         {
+            //Debug.Log("food has a plate");
             if (!PlayerPlate.Instance.IsEmpty()) // If player's plate is NOT empty
             {
-                if (plate.IsCompatibleWithPlate(PlayerPlate.Instance))
-                {
-                    PlayerPlate.Instance.TransferFoodsToPlate(plate);
-                }
+                //Debug.Log("player's plate is NOT empty");
+                PlayerPlate.Instance.TransferFoodsToPlate(plate);
             }
             else //if the player's plate IS empty
             {
+                //Debug.Log("Player's plate IS empty");
                 if(!plate.IsEmpty()) //If the plate is NOT empty
                 {
+                    //Debug.Log("plate is NOT empty");
                     plate.TransferFoodsToPlate(PlayerPlate.Instance);
                 }
             }
@@ -62,7 +63,12 @@ public class Food : ClickableObject
 
     public static bool FoodsAreCompatible(Food aFood, Food aFoodOther)
     {
-        return (aFood.foodData.type == aFoodOther.foodData.type) && !(aFood.foodData.isEmpty && aFoodOther.foodData.isEmpty);
+        return !(aFood.TypeMatches(aFoodOther) && !(aFood.foodData.isEmpty && aFoodOther.foodData.isEmpty));
+    }
+
+    public bool TypeMatches(Food aFood)
+    {
+        return foodData.type == aFood.foodData.type;
     }
 
     public void SetFoodData(FoodScriptable aFoodData)

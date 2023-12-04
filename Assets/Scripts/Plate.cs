@@ -50,21 +50,6 @@ public class Plate : MonoBehaviour
         }
     }
 
-    public bool IsCompatibleWithPlate(Plate aPlate)
-    {
-        foreach(Food food in foodsOnPlate)
-        {
-            foreach(Food foodOther in aPlate.foodsOnPlate)
-            {
-                if (!Food.FoodsAreCompatible(food, foodOther))
-                {
-                    return false;
-                }
-            }
-        }
-
-        return true;
-    }
 
 
     public void AddToPlate(Food aFood)
