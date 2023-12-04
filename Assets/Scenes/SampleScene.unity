@@ -738,7 +738,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &184134663
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2247,6 +2247,14 @@ PrefabInstance:
       propertyPath: money
       value: 
       objectReference: {fileID: 2105844621}
+    - target: {fileID: 1614032895374357295, guid: dcdbf74a264ad9946ba0144f08b43959, type: 3}
+      propertyPath: m_Size.y
+      value: 0.99933517
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614032895374357295, guid: dcdbf74a264ad9946ba0144f08b43959, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.36075026
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcdbf74a264ad9946ba0144f08b43959, type: 3}
 --- !u!4 &561718087 stripped
@@ -8866,6 +8874,14 @@ PrefabInstance:
       propertyPath: money
       value: 
       objectReference: {fileID: 2030871019}
+    - target: {fileID: 1614032895374357295, guid: dcdbf74a264ad9946ba0144f08b43959, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0248566
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614032895374357295, guid: dcdbf74a264ad9946ba0144f08b43959, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.34798956
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcdbf74a264ad9946ba0144f08b43959, type: 3}
 --- !u!4 &1632269430 stripped
@@ -10156,6 +10172,14 @@ PrefabInstance:
       propertyPath: money
       value: 
       objectReference: {fileID: 503210987}
+    - target: {fileID: 1614032895374357295, guid: dcdbf74a264ad9946ba0144f08b43959, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0248566
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614032895374357295, guid: dcdbf74a264ad9946ba0144f08b43959, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.34798956
+      objectReference: {fileID: 0}
     - target: {fileID: 5522636726852697233, guid: dcdbf74a264ad9946ba0144f08b43959, type: 3}
       propertyPath: m_SortingOrder
       value: -1

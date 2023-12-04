@@ -15,8 +15,12 @@ MonoBehaviour:
   dayDuration: 100
   customers:
   - {fileID: 11400000, guid: 137b154242f9a164eabf65db206424de, type: 2}
+  - {fileID: 11400000, guid: b9e1e79c4a66d554db92a195e1dca78a, type: 2}
+  - {fileID: 11400000, guid: 9797b930985c3c44fb9ef595adbb791d, type: 2}
   - {fileID: 11400000, guid: 137b154242f9a164eabf65db206424de, type: 2}
   customerEntryTimes:
   - 3
   - 5
+  - 11
+  - 20
   moneyGoal: 100
