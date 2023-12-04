@@ -21,6 +21,7 @@ public class Station : ClickableObject
         readyFood = transform.Find("Food")?.GetComponent<Food>();
 
         anim = GetComponent<Animator>();
+        SetAnimatorTypeFloat();
 
 
     }
@@ -69,5 +70,30 @@ public class Station : ClickableObject
         readyFood.SetFoodData(foodToMake);
         Debug.Log("Cooking Finished!");
         progressBar.gameObject.SetActive(false);
+    }
+
+    void SetAnimatorTypeFloat()
+    {
+        float stationType = 0f;
+        switch (readyFood.foodData.type)
+        {
+            case FoodScriptable.Type.Meat:
+                stationType = 0f;
+                break;
+
+            case FoodScriptable.Type.Vegetable:
+                stationType = 0.3f;
+                break;
+
+            case FoodScriptable.Type.Carb:
+                stationType = 0.7f;
+                break;
+
+            case FoodScriptable.Type.Drink:
+                stationType = 1f;
+                break;
+        }
+
+        anim.SetFloat("stationType", stationType);
     }
 }

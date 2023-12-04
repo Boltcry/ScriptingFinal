@@ -57,8 +57,8 @@ public class PathfindingNode : MonoBehaviour
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, 0.3f);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawSphere(transform.position, 0.2f);
 
         foreach (PathfindingNode neighbor in connectedNodes) {
             if(neighbor != null)
