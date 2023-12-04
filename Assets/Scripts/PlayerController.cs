@@ -85,4 +85,10 @@ public class PlayerController : MonoBehaviour
         yDirection = direction.y;
     }
 
+    public void SetIsCarryingFood(bool aIsCarryingFood)
+    {
+        isCarryingFood = aIsCarryingFood;
+        anim.SetBool("isCarryingFood", isCarryingFood);
+    }
+
 }

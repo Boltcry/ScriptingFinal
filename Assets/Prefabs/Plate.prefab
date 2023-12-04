@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8648186085227032144}
-  - component: {fileID: 4083025591682819077}
+  - component: {fileID: 5852294246235678607}
   m_Layer: 0
   m_Name: Plate
   m_TagString: Untagged
@@ -35,7 +35,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4083025591682819077
+--- !u!114 &5852294246235678607
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8648186085227032145}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aa27e575bd4e394ea1b1c4c279a95d2, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f83e0f07b4b04346be094459027a39b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   foodsOnPlate:
