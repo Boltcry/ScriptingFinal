@@ -33,7 +33,7 @@ public class Customer : ClickableObject
     {
         if (!hasOrdered)
         {
-            Debug.Log("Customer has started order");
+            //Debug.Log("Customer has started order");
             StartCoroutine(LookAtMenuCoroutine());
         }
         else
@@ -47,7 +47,6 @@ public class Customer : ClickableObject
 
     IEnumerator LookAtMenuCoroutine()
     {
-        hasOrdered = true;
 
         yield return new WaitForSeconds(menuLookDuration);
 
@@ -55,10 +54,9 @@ public class Customer : ClickableObject
         if (customerData != null && customerData.preferredOrder.Count > 0)
         {
             SetCustomerOrder(customerData.preferredOrder);
-
-            Debug.Log("Customer ordered");
         }
         orderBubble.gameObject.SetActive(true);
+        hasOrdered = true;
     }
 
     public void SetCustomerData(CustomerScriptable aCustomerData)
@@ -89,8 +87,10 @@ public class Customer : ClickableObject
     {
         orderBubble.gameObject.SetActive(false);
         money.gameObject.SetActive(true);
+
         SetCustomerData(originalCustomerData);
         PlayerPlate.Instance.ResetPlate();
         plate.ResetPlate();
+        hasOrdered = false;
     }
 }

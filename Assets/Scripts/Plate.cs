@@ -20,12 +20,9 @@ public class Plate : MonoBehaviour
         int index = 0;
         foreach(Food food in foodsOnPlate)
         {
-            Debug.Log(foodsOnPlate.Count+"  foodsOnPlateCount");
-            Debug.Log(emptyFoodData.Count+"  emptyFoodDataCount");
             food.SetFoodData(emptyFoodData[index]);
             index++;
         }
-        Debug.Log("Plate Reset");
     }
 
     public bool IsEmpty()
@@ -84,7 +81,6 @@ public class Plate : MonoBehaviour
 
     public bool HasSameFoods(Plate otherPlate)
     {
-        // Create sets of food data for efficient comparison
         HashSet<FoodScriptable> thisPlateFoodData = new HashSet<FoodScriptable>();
         HashSet<FoodScriptable> otherPlateFoodData = new HashSet<FoodScriptable>();
 
@@ -100,7 +96,6 @@ public class Plate : MonoBehaviour
             otherPlateFoodData.Add(food.foodData);
         }
 
-        // Check if the sets are equal
         return thisPlateFoodData.SetEquals(otherPlateFoodData);
     }
 
