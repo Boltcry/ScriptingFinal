@@ -19,7 +19,7 @@ public class Customer : ClickableObject
         spriteRenderer = GetComponent<SpriteRenderer>();
         UpdateSpriteToCustomerData();
 
-        base.CreateButtonOutline(); 
+        //base.CreateButtonOutline(); 
 
         originalCustomerData = customerData;
     }
@@ -92,5 +92,6 @@ public class Customer : ClickableObject
         PlayerPlate.Instance.ResetPlate();
         plate.ResetPlate();
         hasOrdered = false;
+        base.CreateButtonOutline(); 
     }
 }

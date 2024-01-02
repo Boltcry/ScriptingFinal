@@ -122,5 +122,6 @@ public class GameManager : MonoBehaviour
         //Debug.Log("Spawning customer");
         CustomerScriptable customerData = customersReadyToEnterScene.Dequeue();
         aCustomer.SetCustomerData(customerData);
+        aCustomer.CreateButtonOutline();
     }
 }
